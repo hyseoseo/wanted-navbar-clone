@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LoginModal from "./LoginModal";
 import SearchModal from "./SearchModal";
+import CategoryModal from "./CategoryModal";
 
 const Header = (props) => {
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
+  const [categoryModalOpen, setCategoryModalOpen] = useState(false);
 
   const toggleLoginModal = () => {
     setLoginModalOpen(!loginModalOpen);
@@ -13,6 +15,18 @@ const Header = (props) => {
 
   const toggleSearchModal = () => {
     setSearchModalOpen(!searchModalOpen);
+  };
+
+  const openCategoryModal = () => {
+    setCategoryModalOpen(true);
+  };
+
+  const closeCategoryModal = () => {
+    setCategoryModalOpen(false);
+  };
+
+  const handleExpertClick = () => {
+    window.open("https://www.wanted.co.kr/gigs/experts");
   };
 
   return (
@@ -23,7 +37,19 @@ const Header = (props) => {
         </Link>
         <div className="header-middle">
           <Link to="/events">
-            <button className="navbar-menu">탐색</button>
+            <button
+              onMouseEnter={openCategoryModal}
+              onMouseLeave={closeCategoryModal}
+              className="navbar-menu"
+            >
+              탐색
+            </button>
+            {categoryModalOpen && (
+              <CategoryModal
+                open={openCategoryModal}
+                close={closeCategoryModal}
+              />
+            )}
           </Link>
           <Link to="/events">
             <button className="navbar-menu">커리어 성장</button>
@@ -37,9 +63,12 @@ const Header = (props) => {
           <Link to="/matchup">
             <button className="navbar-menu">매치업</button>
           </Link>
-          <Link to="/experts">
-            <button className="navbar-menu">프리랜서</button>
+          <Link>
+            <button className="navbar-menu" onClick={handleExpertClick}>
+              프리랜서
+            </button>
           </Link>
+
           <Link to="/aiscore">
             <button className="navbar-menu">Ai 합격예측</button>
           </Link>
