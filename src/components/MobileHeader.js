@@ -4,9 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import SearchModal from "./SearchModal";
 import BarmenuModal from "./BarmenuModal";
+import LoginModal from "./LoginModal";
 
 const MobileHeader = (props) => {
-  const { search, searchModalOpen } = props;
+  const { search, searchModalOpen, login, loginModalOpen } = props;
   const [barmenuModalOpen, setBarmenuModalOpen] = useState(false);
 
   const toggleBarmenuModal = () => {
@@ -18,7 +19,10 @@ const MobileHeader = (props) => {
         <Link to="/">
           <div className="header-logo">wanted</div>
         </Link>
-        <div className="mobile-register-button">회원가입하기</div>
+        <button className="mobile-register-button" onClick={login}>
+          회원가입하기
+          {loginModalOpen && <LoginModal handleLoginModal={login} />}
+        </button>
       </div>
       <navbar className="mobile-navbar">
         <div className="mobile-navbar-left">
@@ -33,16 +37,19 @@ const MobileHeader = (props) => {
           </Link>
         </div>
         <div className="mobile-navbar-right">
-          <div className="mobile-navbar-right-menu">
-            <FontAwesomeIcon icon={faSearch} onClick={search} />
+          <button className="mobile-navbar-right-menu" onClick={search}>
+            <FontAwesomeIcon icon={faSearch} />
             {searchModalOpen && <SearchModal handleSearchModal={search} />}
-          </div>
-          <div className="mobile-navbar-right-menu">
-            <FontAwesomeIcon icon={faBars} onClick={toggleBarmenuModal} />
+          </button>
+          <button
+            className="mobile-navbar-right-menu"
+            onClick={toggleBarmenuModal}
+          >
+            <FontAwesomeIcon icon={faBars} />
             {barmenuModalOpen && (
               <BarmenuModal handleBarmenuModal={toggleBarmenuModal} />
             )}
-          </div>
+          </button>
         </div>
       </navbar>
     </>

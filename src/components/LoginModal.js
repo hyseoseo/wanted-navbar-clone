@@ -22,6 +22,9 @@ const LoginModal = (props) => {
         <button>Apple로 시작하기</button>
         <button>Google으로 시작하기</button>
         걱정 마세요! 여러분의 활동은 sns에 노출되지 않습니다.
+        <button className="login-modal-close-button" onClick={handleLoginModal}>
+          close
+        </button>
       </div>
     </div>
   );

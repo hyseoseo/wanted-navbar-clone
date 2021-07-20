@@ -94,6 +94,8 @@ const Header = (props) => {
         <MobileHeader
           search={toggleSearchModal}
           searchModalOpen={searchModalOpen}
+          login={toggleLoginModal}
+          loginModalOpen={loginModalOpen}
         />
       </div>
     </div>
