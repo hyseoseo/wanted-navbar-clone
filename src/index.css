@@ -9,7 +9,7 @@ body {
   line-height: 1;
   letter-spacing: -0.4px;
   font-size: 13px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', "Malgun Gothic", sans-serif;
   box-sizing: border-box;
   color: black;
 
@@ -77,7 +77,7 @@ button {
 
 .main {
   display: block;
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   width: 100%;
   margin: 0;
 }
@@ -85,6 +85,7 @@ button {
 /* header */
 .header-container {
   max-width: 1256px;
+  height: 50px;
   flex: 1 1 auto;
   margin: 0 auto;
   display: flex;
@@ -93,9 +94,9 @@ button {
   align-items: center;
 }
 
-.header-logo {
+#header-logo {
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-left: 10px;
   margin-right: 10px;
   width: 150px;
@@ -212,6 +213,12 @@ button {
   margin:0;
 }
 
+.mobile-navbar, .mobile-header {
+  display: none;
+}
+
+/* main content */
+
 .home-top, .home-bottom {
   min-height: 800px;
   position: relative;
@@ -230,4 +237,75 @@ button {
   min-height: 800px;
   background-color: lightgreen;
   color: black;
+}
+
+/* media query */
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 90px;
+  }
+
+  .header-container {
+    height: 90px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #header-logo {
+    display: none;
+  }
+
+  .header-logo {
+    font-weight: 600;
+    font-size: 1.3rem;
+    width: 150px;
+    margin-left: 15px;
+  }
+
+  .header-middle, .header-searchlogin, .header-right {
+    display: none;
+  }
+
+  .mobile-navbar, .mobile-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-register-button {
+    border-radius: 8px;
+    border: 1px solid blue;
+    color: blue;
+  }
+
+  .mobile-navbar-left, .mobile-navbar-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .mobile-navbar-left {
+    margin-left: 10px;
+  }
+
+  .mobile-navbar-right {
+    margin-right: 10px;
+  }
+
+  .mobile-navbar-left-menu {
+    flex: 30%;
+    padding: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .mobile-navbar-right-menu {
+    flex: 45%;
+    padding: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
 }

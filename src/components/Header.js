@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import LoginModal from "./LoginModal";
 import SearchModal from "./SearchModal";
 import CategoryModal from "./CategoryModal";
+import MobileHeader from "./MobileHeader";
 
 const Header = (props) => {
   const [loginModalOpen, setLoginModalOpen] = useState(false);
@@ -33,7 +34,7 @@ const Header = (props) => {
     <div className="header">
       <div className="header-container">
         <Link to="/">
-          <div className="header-logo">wanted</div>
+          <div id="header-logo">wanted</div>
         </Link>
         <div className="header-middle">
           <Link to="/category">
@@ -90,6 +91,7 @@ const Header = (props) => {
             <div className="navbar-dashboard">기업서비스</div>
           </Link>
         </div>
+        <MobileHeader />
       </div>
     </div>
   );
