@@ -5,7 +5,7 @@ import EventsContainer from "./containers/EventsContainer";
 import SalaryContainer from "./containers/SalaryContainer";
 import CvContainer from "./containers/CvContainer";
 import MatchupContainer from "./containers/MatchupContainer";
-import ExpertsContainer from "./containers/ExpertsContainer";
+import CategoryContainer from "./containers/CategoryContainer";
 import AiscoreContainer from "./containers/AiscoreContainer";
 import DashboardContainer from "./containers/Dashboard";
 import Header from "./components/Header";
@@ -20,7 +20,7 @@ function App() {
         <Route path="/salary" exact component={SalaryContainer} />
         <Route path="/cv" exact component={CvContainer} />
         <Route path="/matchup" exact component={MatchupContainer} />
-        <Route path="/experts" exact component={ExpertsContainer} />
+        <Route path="/category" exact component={CategoryContainer} />
         <Route path="/aiscore" exact component={AiscoreContainer} />
         <Route path="/dashboard" exact component={DashboardContainer} />
       </Switch>

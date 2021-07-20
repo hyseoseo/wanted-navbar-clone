@@ -36,7 +36,7 @@ const Header = (props) => {
           <div className="header-logo">wanted</div>
         </Link>
         <div className="header-middle">
-          <Link to="/events">
+          <Link to="/category">
             <button
               onMouseEnter={openCategoryModal}
               onMouseLeave={closeCategoryModal}

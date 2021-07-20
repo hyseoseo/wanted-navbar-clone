@@ -36,6 +36,15 @@ button {
   cursor: pointer;
 }
 
+.react-link {
+  text-decoration: none;
+}
+
+.react-link:focus, .react-link.hover, .react-link.visited, .react-link:active {
+  text-decoration: none;
+}
+
+
 /* layout */
 
 #root {
@@ -116,7 +125,7 @@ button {
   right: 0;
   bottom: 0;
   z-index: 10000;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.3);
 }
 
 .category-modal {
@@ -166,7 +175,20 @@ button {
   left: 0;
   top: 0;
   background-color: white;
+  overflow: hidden;
+  color: transparent;
+  animation: slidedown 0.2s;
 }
+  @keyframes slidedown {
+    from {
+      height: 0;
+      opacity: 0;
+    }
+    to {
+      height: 450px;
+      opacity: 1;
+    }
+  }
 
 .navbar-dashboard {
   color: gray;
