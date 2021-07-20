@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
+
 import LoginModal from "./LoginModal";
 import SearchModal from "./SearchModal";
 import CategoryModal from "./CategoryModal";
@@ -75,13 +78,13 @@ const Header = (props) => {
           </Link>
         </div>
         <div className="header-searchlogin">
-          <button onClick={toggleSearchModal} className="navbar-menu">
-            검색
+          <button onClick={toggleSearchModal} className="header-search">
+            <FontAwesomeIcon icon={faSearch} />
           </button>
           {searchModalOpen && (
             <SearchModal handleSearchModal={toggleSearchModal} />
           )}
-          <button onClick={toggleLoginModal} className="navbar-menu">
+          <button onClick={toggleLoginModal} className="header-login">
             회원가입/로그인
           </button>
           {loginModalOpen && <LoginModal handleLoginModal={toggleLoginModal} />}
