@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  letter-spacing: -0.4px;
+  font-size: 13px;
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
+  color: #555555;
+
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:visited {
+  color: #555555;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* layout */
+
+#root {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1256px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header {
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
+  flex: 0 0 80px;
+  width: 100%;
+}
+
+.main {
+  display: block;
+  flex: 1 0 auto;
+  width: 100%;
+  margin: 0;
+}
+
+/* header */
+.header-content {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 15px 0;
+  padding: 10px 20px 0 20px;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 15px;
+}
+
+.login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.login-modal-container {
+  position: absolute;
+  width: 375px;
+  height: 620px;
+  left: 50%;
+  top: 50%;
+  background-color: white;
+}
