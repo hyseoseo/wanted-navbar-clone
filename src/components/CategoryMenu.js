@@ -6,7 +6,7 @@ const CategoryMenu = (props) => {
 
   return (
     <div className="category-menu-wrapper">
-      <div>{big.name}</div>
+      <div className="big-category">{big.name}</div>
       {small.map((item) => (
         <div>{item.name}</div>
       ))}

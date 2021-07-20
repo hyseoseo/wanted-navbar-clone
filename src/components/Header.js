@@ -44,6 +44,7 @@ const Header = (props) => {
             <button
               onMouseEnter={openCategoryModal}
               onMouseLeave={closeCategoryModal}
+              onClick={closeCategoryModal}
               className="navbar-menu"
             >
               탐색
