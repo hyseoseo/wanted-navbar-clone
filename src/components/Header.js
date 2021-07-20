@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LoginModal from "./LoginModal";
+import SearchModal from "./SearchModal";
 
 const Header = (props) => {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [searchModalOpen, setSearchModalOpen] = useState(false);
 
-  const openModal = (event) => {
-    setModalOpen(true);
+  const toggleLoginModal = () => {
+    setLoginModalOpen(!loginModalOpen);
   };
 
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-  const toggleModal = () => {
-    setModalOpen(!modalOpen);
+  const toggleSearchModal = () => {
+    setSearchModalOpen(!searchModalOpen);
   };
 
   return (
@@ -24,6 +22,9 @@ const Header = (props) => {
           <div className="header-logo">wanted</div>
         </Link>
         <div className="header-middle">
+          <Link to="/events">
+            <button className="navbar-menu">탐색</button>
+          </Link>
           <Link to="/events">
             <button className="navbar-menu">커리어 성장</button>
           </Link>
@@ -44,10 +45,16 @@ const Header = (props) => {
           </Link>
         </div>
         <div className="header-searchlogin">
-          <button onClick={toggleModal} className="navbar-menu">
+          <button onClick={toggleSearchModal} className="navbar-menu">
+            검색
+          </button>
+          {searchModalOpen && (
+            <SearchModal handleSearchModal={toggleSearchModal} />
+          )}
+          <button onClick={toggleLoginModal} className="navbar-menu">
             회원가입/로그인
           </button>
-          {modalOpen && <LoginModal handleLoginModal={toggleModal} />}
+          {loginModalOpen && <LoginModal handleLoginModal={toggleLoginModal} />}
         </div>
         <div className="header-right">
           <Link to="/dashboard">
