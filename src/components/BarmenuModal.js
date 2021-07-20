@@ -1,19 +1,19 @@
 import React from "react";
 
-const SearchModal = (props) => {
-  const { handleSearchModal } = props;
+const BarmenuModal = (props) => {
+  const { handleBarmenuModal } = props;
 
   return (
-    <div className="search-modal" onClick={handleSearchModal}>
+    <div className="barmenu-modal" onClick={handleBarmenuModal}>
       <div
-        className="search-modal-container"
+        className="barmenu-modal-container"
         onClick={(event) => event.stopPropagation()}
       >
         <form>
-          <label htmlFor="search">
+          <label htmlFor="barmenu">
             <input
               type="text"
-              id="search"
+              id="barmenu"
               placeholder="#태그, 회사, 포지션 검색"
             />
             <button type="submit">검색</button>
@@ -24,8 +24,8 @@ const SearchModal = (props) => {
         <button>#퇴사율5%이하</button>
         <button>#연봉상위2~%</button>
         <button
-          className="search-modal-close-button"
-          onClick={handleSearchModal}
+          className="barmenu-modal-close-button"
+          onClick={handleBarmenuModal}
         >
           close
         </button>
@@ -34,4 +34,4 @@ const SearchModal = (props) => {
   );
 };
 
-export default SearchModal;
+export default BarmenuModal;

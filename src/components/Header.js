@@ -91,7 +91,10 @@ const Header = (props) => {
             <div className="navbar-dashboard">기업서비스</div>
           </Link>
         </div>
-        <MobileHeader />
+        <MobileHeader
+          search={toggleSearchModal}
+          searchModalOpen={searchModalOpen}
+        />
       </div>
     </div>
   );

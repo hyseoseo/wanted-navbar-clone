@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
+import SearchModal from "./SearchModal";
+import BarmenuModal from "./BarmenuModal";
 
-const MobileHeader = () => {
+const MobileHeader = (props) => {
+  const { search, searchModalOpen } = props;
+  const [barmenuModalOpen, setBarmenuModalOpen] = useState(false);
+
+  const toggleBarmenuModal = () => {
+    setBarmenuModalOpen(!barmenuModalOpen);
+  };
   return (
     <>
       <div className="mobile-header">
@@ -26,10 +34,14 @@ const MobileHeader = () => {
         </div>
         <div className="mobile-navbar-right">
           <div className="mobile-navbar-right-menu">
-            <FontAwesomeIcon icon={faSearch} />
+            <FontAwesomeIcon icon={faSearch} onClick={search} />
+            {searchModalOpen && <SearchModal handleSearchModal={search} />}
           </div>
           <div className="mobile-navbar-right-menu">
-            <FontAwesomeIcon icon={faBars} />
+            <FontAwesomeIcon icon={faBars} onClick={toggleBarmenuModal} />
+            {barmenuModalOpen && (
+              <BarmenuModal handleBarmenuModal={toggleBarmenuModal} />
+            )}
           </div>
         </div>
       </navbar>
