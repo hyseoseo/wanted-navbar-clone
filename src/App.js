@@ -8,10 +8,12 @@ import MatchupContainer from "./containers/MatchupContainer";
 import ExpertsContainer from "./containers/ExpertsContainer";
 import AiscoreContainer from "./containers/AiscoreContainer";
 import DashboardContainer from "./containers/Dashboard";
+import Header from "./components/Header";
 
 function App() {
   return (
     <Router>
+      <Header />
       <Switch>
         <Route path="/" exact component={MainContainer} />
         <Route path="/events" exact component={EventsContainer} />

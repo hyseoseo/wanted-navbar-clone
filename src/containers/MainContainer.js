@@ -5,7 +5,6 @@ import Intro from "../components/Intro";
 const MainContainer = (props) => {
   return (
     <>
-      <Header />
       <Intro />
     </>
   );

@@ -1,34 +1,59 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Modal from "./Modal";
+import LoginModal from "./LoginModal";
 
 const Header = (props) => {
   const [modalOpen, setModalOpen] = useState(false);
 
-  const openLoginModal = (event) => {
+  const openModal = (event) => {
     setModalOpen(true);
   };
 
-  const closeLoginModal = () => {
+  const closeModal = () => {
     setModalOpen(false);
+  };
+
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
   };
 
   return (
     <div className="header">
       <div className="header-content">
-        <Link to="/">wanted</Link>
-        <button onMouseOver={openLoginModal} onMouseOut={closeLoginModal}>
-          로그인
-        </button>
-        {modalOpen && <Modal handleLoginModal={closeLoginModal} />}
-
-        <Link to="/events">커리어 성장</Link>
-        <Link to="/salary">직군별 연봉</Link>
-        <Link to="/cv">이력서</Link>
-        <Link to="/matchup">매치업</Link>
-        <Link to="/experts">프리랜서</Link>
-        <Link to="/aiscore">Ai 합격예측</Link>
-        <Link to="/dashboard">기업서비스</Link>
+        <Link to="/">
+          <div className="header-logo">wanted</div>
+        </Link>
+        <div className="header-middle">
+          <Link to="/events">
+            <button className="navbar-menu">커리어 성장</button>
+          </Link>
+          <Link to="/salary">
+            <button className="navbar-menu">직군별 연봉</button>
+          </Link>
+          <Link to="/cv">
+            <button className="navbar-menu">이력서</button>
+          </Link>
+          <Link to="/matchup">
+            <button className="navbar-menu">매치업</button>
+          </Link>
+          <Link to="/experts">
+            <button className="navbar-menu">프리랜서</button>
+          </Link>
+          <Link to="/aiscore">
+            <button className="navbar-menu">Ai 합격예측</button>
+          </Link>
+        </div>
+        <div className="header-searchlogin">
+          <button onClick={toggleModal} className="navbar-menu">
+            회원가입/로그인
+          </button>
+          {modalOpen && <LoginModal handleLoginModal={toggleModal} />}
+        </div>
+        <div className="header-right">
+          <Link to="/dashboard">
+            <div className="navbar-dashboard">기업서비스</div>
+          </Link>
+        </div>
       </div>
     </div>
   );

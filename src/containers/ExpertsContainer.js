@@ -5,7 +5,6 @@ import Intro from "../components/Intro";
 const ExpertsContainer = (props) => {
   return (
     <>
-      <Header />
       <Intro />
     </>
   );

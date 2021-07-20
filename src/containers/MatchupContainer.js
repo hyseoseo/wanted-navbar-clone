@@ -5,7 +5,6 @@ import Intro from "../components/Intro";
 const MatchupContainer = (props) => {
   return (
     <>
-      <Header />
       <div>찾아오는 면접 제안</div>
     </>
   );
