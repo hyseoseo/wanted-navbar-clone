@@ -59,11 +59,20 @@ button {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: white;
   border-bottom: 1px solid lightgrey;
   width: 100%;
   height: 50px;
-  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 1;
 }
 
 .main {
@@ -74,13 +83,14 @@ button {
 }
 
 /* header */
-.header-content {
+.header-container {
+  max-width: 1256px;
+  flex: 1 1 auto;
+  margin: 0 auto;
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-size: 15px;
-  height: 50px;
 }
 
 .header-logo {

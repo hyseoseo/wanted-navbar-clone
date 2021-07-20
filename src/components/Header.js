@@ -31,7 +31,7 @@ const Header = (props) => {
 
   return (
     <div className="header">
-      <div className="header-content">
+      <div className="header-container">
         <Link to="/">
           <div className="header-logo">wanted</div>
         </Link>
