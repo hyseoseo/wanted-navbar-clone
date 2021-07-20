@@ -145,7 +145,7 @@ button {
 .header-middle .navbar-menu {
   flex: 15%;
   margin: 0 12px;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 500;
   min-height: 50px;
   max-height: 50px;
@@ -212,6 +212,22 @@ button {
   margin:0;
 }
 
-.home {
-  margin-top: 0;
+.home-top, .home-bottom {
+  min-height: 800px;
+  position: relative;
+  top: 50px;
+  width: 100%;
+  background-color: lightblue;
+  color: black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.home-bottom {
+  min-height: 800px;
+  background-color: lightgreen;
+  color: black;
 }

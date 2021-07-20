@@ -1,7 +1,12 @@
 import React from "react";
 
 const Intro = (props) => {
-  return <div class="home">직장인의 커리어 여정을</div>;
+  return (
+    <>
+      <div class="home-top">This is homepage.</div>
+      <div class="home-bottom">home~~~~</div>
+    </>
+  );
 };
 
 export default Intro;

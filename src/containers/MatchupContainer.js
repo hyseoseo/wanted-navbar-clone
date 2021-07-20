@@ -5,7 +5,8 @@ import Intro from "../components/Intro";
 const MatchupContainer = (props) => {
   return (
     <>
-      <div>찾아오는 면접 제안</div>
+      <div class="home-top">This is matchup page.</div>
+      <div class="home-bottom">matchup~~~~</div>
     </>
   );
 };

@@ -5,7 +5,8 @@ import Intro from "../components/Intro";
 const CvContainer = (props) => {
   return (
     <>
-      <div>이력서 양식, 그 이상</div>
+      <div class="home-top">This is CV page.</div>
+      <div class="home-bottom">CV~~~~</div>
     </>
   );
 };

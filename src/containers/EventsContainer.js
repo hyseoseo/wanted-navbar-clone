@@ -5,7 +5,8 @@ import Intro from "../components/Intro";
 const EventsContainer = (props) => {
   return (
     <>
-      <div>프리온보딩 코스</div>
+      <div class="home-top">This is event page.</div>
+      <div class="home-bottom">event~~~~</div>
     </>
   );
 };

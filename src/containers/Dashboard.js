@@ -5,7 +5,8 @@ import Intro from "../components/Intro";
 const DashboardContainer = (props) => {
   return (
     <>
-      <div>원티드 기업 서비스</div>
+      <div class="home-top">This is company page.</div>
+      <div class="home-bottom">company</div>
     </>
   );
 };
