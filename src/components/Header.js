@@ -36,7 +36,7 @@ const Header = (props) => {
   return (
     <div className="header">
       <div className="header-container">
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: "none" }}>
           <div id="header-logo">wanted</div>
         </Link>
         <div className="header-middle">

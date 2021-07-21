@@ -25,7 +25,7 @@ a {
   cursor: pointer;
 }
 
-a:visited {
+a:visited, a:focus, a:hover, a:link, a:active {
   text-decoration: none;
 }
 
@@ -35,15 +35,6 @@ button {
   outline: none;
   cursor: pointer;
 }
-
-.react-link {
-  text-decoration: none;
-}
-
-.react-link:focus, .react-link.hover, .react-link.visited, .react-link:active {
-  text-decoration: none;
-}
-
 
 /* layout */
 
@@ -99,6 +90,7 @@ button {
   font-size: 1.3rem;
   margin-left: 10px;
   width: 100px;
+  color: black;
 }
 
 .header-middle {
@@ -237,10 +229,13 @@ button {
   justify-content: space-around;
 }
 
-.category-menu-wrapper {
+.category-menu-wrapper, .category-more-menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 15%;
+  margin-right: 12px;
+  margin-left: 12px;
 }
 
 .category-menu-title {
@@ -250,6 +245,19 @@ button {
   margin-top: 20px;
   margin-bottom: 0;
   padding: 0;
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: space-between;
+}
+
+.category-menu-title-name {
+  color: black;
+}
+
+.category-menu-title-arrow {
+  color: #555;
+  font-size: 0.8rem;
+  margin-right: 8px;
 }
 
 .category-menu-list {
@@ -262,9 +270,20 @@ button {
   color: #555
 }
 
+.category-menu-list-name {
+  color: #555;
+}
+
 .category-menu-list-more {
   height: 30px;
   margin-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.category-menu-list-more-name {
+  color: #555;
 }
 
 .big-category {
@@ -333,6 +352,7 @@ button {
     font-size: 1.3rem;
     width: 150px;
     margin-left: 15px;
+    color: black;
   }
 
   .header-middle, .header-searchlogin, .header-right {
@@ -361,6 +381,7 @@ button {
 
   .mobile-navbar-left {
     margin-left: 10px;
+    color: black;
   }
 
   .mobile-navbar-right {
@@ -372,6 +393,7 @@ button {
     padding: 8px;
     font-size: 0.9rem;
     font-weight: 600;
+    color: black;
   }
 
   .mobile-navbar-right-menu {

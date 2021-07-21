@@ -12,7 +12,7 @@ const CategoryModal = (props) => {
         onMouseEnter={open}
         onMouseLeave={close}
       >
-        <div className="category-menu-container">
+        <div className="category-menu-container" onClick={close}>
           {categories.map((item) => (
             <CategoryMenu big={item.big} small={item.small} />
           ))}
