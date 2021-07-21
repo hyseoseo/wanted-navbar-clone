@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const SearchModal = (props) => {
-  const { handleSearchModal, fetchSearchKeyword } = props;
+  const { handleSearchModal } = props;
   const [keyword, setKeyword] = useState("");
 
   const handleInputChange = (e) => {

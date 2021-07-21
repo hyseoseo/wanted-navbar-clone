@@ -12,7 +12,6 @@ const Header = (props) => {
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
-  const [searchKeyword, setSearchKeyword] = useState("");
 
   const toggleLoginModal = () => {
     setLoginModalOpen(!loginModalOpen);
@@ -32,10 +31,6 @@ const Header = (props) => {
 
   const handleExpertClick = () => {
     window.open("https://www.wanted.co.kr/gigs/experts");
-  };
-
-  const fetchSearchKeyword = (keyword) => {
-    setSearchKeyword(keyword);
   };
 
   return (
@@ -88,10 +83,7 @@ const Header = (props) => {
             <FontAwesomeIcon icon={faSearch} />
           </button>
           {searchModalOpen && (
-            <SearchModal
-              handleSearchModal={toggleSearchModal}
-              fetchSearchKeyword={fetchSearchKeyword}
-            />
+            <SearchModal handleSearchModal={toggleSearchModal} />
           )}
           <button onClick={toggleLoginModal} className="header-login">
             회원가입/로그인
