@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-import LoginModal from "./LoginModal";
-import SearchModal from "./SearchModal";
-import CategoryModal from "./CategoryModal";
+import LoginModal from "./modals/LoginModal";
+import SearchModal from "./modals/SearchModal";
+import CategoryModal from "./modals/CategoryModal";
 import MobileHeader from "./MobileHeader";
 
 const Header = (props) => {

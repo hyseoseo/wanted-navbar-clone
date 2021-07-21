@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
-import SearchModal from "./SearchModal";
-import BarmenuModal from "./BarmenuModal";
-import LoginModal from "./LoginModal";
+
+import SearchModal from "./modals/SearchModal";
+import BarmenuModal from "./modals/BarmenuModal";
+import LoginModal from "./modals/LoginModal";
 
 const MobileHeader = (props) => {
   const { search, searchModalOpen, login, loginModalOpen } = props;

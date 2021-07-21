@@ -1,6 +1,6 @@
 import React from "react";
-import CategoryMenu from "./CategoryMenu";
-import CategoryMoreMenu from "./CategoryMoreMenu";
+import CategoryMenu from "../CategoryMenu";
+import CategoryMoreMenu from "../CategoryMoreMenu";
 
 const CategoryModal = (props) => {
   const { open, close, categories, mores } = props;
