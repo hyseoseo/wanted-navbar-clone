@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import LoginModal from "./LoginModal";
 import SearchModal from "./SearchModal";
@@ -12,6 +12,7 @@ const Header = (props) => {
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
+  const [searchKeyword, setSearchKeyword] = useState("");
 
   const toggleLoginModal = () => {
     setLoginModalOpen(!loginModalOpen);
@@ -33,10 +34,14 @@ const Header = (props) => {
     window.open("https://www.wanted.co.kr/gigs/experts");
   };
 
+  const fetchSearchKeyword = (keyword) => {
+    setSearchKeyword(keyword);
+  };
+
   return (
     <div className="header">
       <div className="header-container">
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/">
           <div id="header-logo">wanted</div>
         </Link>
         <div className="header-middle">
@@ -83,7 +88,10 @@ const Header = (props) => {
             <FontAwesomeIcon icon={faSearch} />
           </button>
           {searchModalOpen && (
-            <SearchModal handleSearchModal={toggleSearchModal} />
+            <SearchModal
+              handleSearchModal={toggleSearchModal}
+              fetchSearchKeyword={fetchSearchKeyword}
+            />
           )}
           <button onClick={toggleLoginModal} className="header-login">
             회원가입/로그인

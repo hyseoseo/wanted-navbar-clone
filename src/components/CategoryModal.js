@@ -7,7 +7,6 @@ const CategoryModal = (props) => {
 
   return (
     <div className="category-modal" onClick={close}>
-      {console.log(mores)}
       <div
         className="category-modal-container"
         onClick={(event) => event.stopPropagation()}

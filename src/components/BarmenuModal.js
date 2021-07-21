@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const BarmenuModal = (props) => {
   const { handleBarmenuModal } = props;
@@ -9,6 +11,12 @@ const BarmenuModal = (props) => {
         className="barmenu-modal-container"
         onClick={(event) => event.stopPropagation()}
       >
+        <button
+          className="barmenu-modal-close-button"
+          onClick={handleBarmenuModal}
+        >
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
         <form>
           <label htmlFor="barmenu">
             <input
@@ -23,12 +31,6 @@ const BarmenuModal = (props) => {
         <button>#어학교육</button>
         <button>#퇴사율5%이하</button>
         <button>#연봉상위2~%</button>
-        <button
-          className="barmenu-modal-close-button"
-          onClick={handleBarmenuModal}
-        >
-          close
-        </button>
       </div>
     </div>
   );

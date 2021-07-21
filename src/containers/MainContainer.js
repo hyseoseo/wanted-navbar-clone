@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import Header from "../components/Header";
-import Intro from "../components/Intro";
+import React from "react";
 
 const MainContainer = (props) => {
   return (
     <>
-      <Intro />
+      <div class="home-top">This is homepage.</div>
+      <div class="home-bottom">home~~~~</div>
     </>
   );
 };
