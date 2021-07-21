@@ -1,11 +1,13 @@
 import React from "react";
 import CategoryMenu from "./CategoryMenu";
+import CategoryMoreMenu from "./CategoryMoreMenu";
 
 const CategoryModal = (props) => {
-  const { open, close, categories } = props;
+  const { open, close, categories, mores } = props;
 
   return (
     <div className="category-modal" onClick={close}>
+      {console.log(mores)}
       <div
         className="category-modal-container"
         onClick={(event) => event.stopPropagation()}
@@ -13,10 +15,16 @@ const CategoryModal = (props) => {
         onMouseLeave={close}
       >
         <div className="category-menu-container" onClick={close}>
-          {categories.map((item) => (
-            <CategoryMenu big={item.big} small={item.small} />
-          ))}
-          <div className="category-more-menu">금융</div>
+          <div className="category-menus">
+            {categories.map((item) => (
+              <CategoryMenu big={item.big} small={item.small} />
+            ))}
+          </div>
+          <div className="category-more-menu">
+            {mores.map((item) => (
+              <CategoryMoreMenu big={item.big} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -39,6 +47,7 @@ CategoryModal.defaultProps = {
         { id: 105, name: "솔루션 컨설턴트" },
         { id: 106, name: "해외영업" },
       ],
+      show: true,
     },
     {
       id: 2,
@@ -92,5 +101,29 @@ CategoryModal.defaultProps = {
         { id: 506, name: "유니티 개발자" },
       ],
     },
+    {
+      id: 6,
+      big: { id: 60, name: "금융" },
+      small: [
+        { id: 600, name: "게임 기획자" },
+        { id: 601, name: "그래픽 디자이너" },
+        { id: 602, name: "모바일 게임 개발자" },
+        { id: 603, name: "게임 아티스트" },
+        { id: 604, name: "게임 클라이언트 개발자" },
+        { id: 605, name: "게임 서버 개발자" },
+        { id: 606, name: "유니티 개발자" },
+      ],
+    },
+  ],
+  mores: [
+    { id: 1, big: { id: 60, name: "금융" } },
+    { id: 2, big: { id: 70, name: "제조생산" } },
+    { id: 3, big: { id: 80, name: "물류" } },
+    { id: 4, big: { id: 90, name: "의료,바이오" } },
+    { id: 5, big: { id: 16, name: "교육" } },
+    { id: 6, big: { id: 17, name: "법률" } },
+    { id: 7, big: { id: 18, name: "식음료" } },
+    { id: 8, big: { id: 19, name: "건설" } },
+    { id: 9, big: { id: 14, name: "복지" } },
   ],
 };
