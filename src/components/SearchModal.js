@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const SearchModal = (props) => {
   const { handleSearchModal, fetchSearchKeyword } = props;
@@ -13,7 +13,7 @@ const SearchModal = (props) => {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    fetchSearchKeyword(keyword);
+    props.history.push(`/search?query=${keyword}`);
   };
 
   return (
@@ -30,6 +30,7 @@ const SearchModal = (props) => {
         </button>
         <div className="search-modal-content">
           <div className="search-modal-searchbar">
+            <FontAwesomeIcon icon={faSearch} />
             <form onSubmit={handleSearchSubmit}>
               <label htmlFor="search">
                 <input
@@ -38,6 +39,7 @@ const SearchModal = (props) => {
                   placeholder="#태그, 회사, 포지션 검색"
                   className="searchbar-input"
                   onChange={handleInputChange}
+                  required
                 />
               </label>
             </form>
@@ -58,4 +60,4 @@ const SearchModal = (props) => {
   );
 };
 
-export default SearchModal;
+export default withRouter(SearchModal);

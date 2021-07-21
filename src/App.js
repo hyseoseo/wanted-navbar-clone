@@ -9,6 +9,7 @@ import CategoryContainer from "./containers/CategoryContainer";
 import AiscoreContainer from "./containers/AiscoreContainer";
 import DashboardContainer from "./containers/Dashboard";
 import Header from "./components/Header";
+import SearchContainer from "./containers/SearchContainer";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/category" exact component={CategoryContainer} />
         <Route path="/aiscore" exact component={AiscoreContainer} />
         <Route path="/dashboard" exact component={DashboardContainer} />
+        <Route path="/search" component={SearchContainer} />
       </Switch>
     </Router>
   );
