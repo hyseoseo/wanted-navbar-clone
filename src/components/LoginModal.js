@@ -14,7 +14,7 @@ const LoginModal = (props) => {
         <button className="login-modal-close-button" onClick={handleLoginModal}>
           <FontAwesomeIcon icon={faTimes} />
         </button>
-        <header id="header-logo">wanted</header>
+        <header className="login-header-logo">wanted</header>
         <div className="login-modal-title">
           직장인을 위한 커리어 플랫폼 원티드!
           <br />
@@ -22,7 +22,11 @@ const LoginModal = (props) => {
         </div>
         <form className="email-form">
           <label htmlFor="email">
-            <input type="text" placeholder="이메일을 입력해주세요" />
+            <input
+              type="text"
+              placeholder="이메일을 입력해주세요"
+              className="email-input"
+            />
           </label>
           <button type="submit" className="login-button">
             이메일로 시작하기

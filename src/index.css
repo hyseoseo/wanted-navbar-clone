@@ -36,6 +36,11 @@ button {
   cursor: pointer;
 }
 
+input {
+  outline: none !important;
+  border: none;
+}
+
 /* layout */
 
 #root {
@@ -176,9 +181,18 @@ button {
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 4px;
+}
+
+.login-header-logo {
+  font-weight: 600;
+  font-size: 1.3rem;
+  width: 100px;
+  color: black;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 .login-modal-title {
@@ -195,6 +209,13 @@ button {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  
+}
+
+.email-input {
+  border: 1px solid lightgray;
+  width: 300px;
+  height: 45px;
 }
 
 .login-button {
@@ -227,12 +248,20 @@ button {
 }
 
 .search-modal-searchbar {
-  width: 100%;
-  height: 80px;
+  width: 60vw;
+  max-width: 100%;
+  height: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
+  border: 1px solid blue;
+  border-radius: 25px;
+}
+
+.search-icon {
+  margin-left: 15px;
+  margin-right: 10px;
 }
 
 .search-bar-input, .search-bar-input:focus {
@@ -241,6 +270,7 @@ button {
   flex: 100%;
   min-height: 50px;
   outline: none;
+  font-size: 1rem;
 }
 
 .search-modal-tags {
@@ -250,7 +280,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: -20px;
+  margin-top: 10px;
 }
 
 .search-modal-tags-title {
@@ -291,7 +321,7 @@ button {
       opacity: 0;
     }
     to {
-      height: 450px;
+      height: 250px;
       opacity: 1;
     }
   }

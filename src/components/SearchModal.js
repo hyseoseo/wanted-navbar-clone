@@ -14,6 +14,7 @@ const SearchModal = (props) => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     props.history.push(`/search?query=${keyword}`);
+    handleSearchModal();
   };
 
   return (
@@ -30,7 +31,7 @@ const SearchModal = (props) => {
         </button>
         <div className="search-modal-content">
           <div className="search-modal-searchbar">
-            <FontAwesomeIcon icon={faSearch} />
+            <FontAwesomeIcon icon={faSearch} className="search-icon" />
             <form onSubmit={handleSearchSubmit}>
               <label htmlFor="search">
                 <input
