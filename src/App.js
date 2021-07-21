@@ -20,6 +20,12 @@ function App() {
         <Route path="/salary" exact component={SalaryContainer} />
         <Route path="/cv" exact component={CvContainer} />
         <Route path="/matchup" exact component={MatchupContainer} />
+        <Route
+          path="/category/:bigid/:smallid"
+          exact
+          component={CategoryContainer}
+        />
+        <Route path="/category/:bigid" exact component={CategoryContainer} />
         <Route path="/category" exact component={CategoryContainer} />
         <Route path="/aiscore" exact component={AiscoreContainer} />
         <Route path="/dashboard" exact component={DashboardContainer} />
