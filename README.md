@@ -1,4 +1,4 @@
-# [프리온보딩 코스] 서류 심사 과제 - 원티드 Global Navigation Bar 클론
+# [프리온보딩 코스] 서류 과제 - 원티드 Global Navigation Bar Clone
 
 ## 1. 배포 주소
 https://wanted-navbar.herokuapp.com/
