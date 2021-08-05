@@ -9,6 +9,7 @@ https://wanted-navbar.herokuapp.com/
 - 드롭다운, 검색, 로그인 메뉴 구현 (모달)
 - 검색은 input 받아서 query setting 부분까지 구현
 - 반응형 메뉴 구현
+- 메뉴 세부 내용은 일부 미완성 상태입니다.
 
 <br>
 
